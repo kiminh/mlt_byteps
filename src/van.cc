@@ -21,6 +21,10 @@
 #include "./zmq_van.h"
 #define USE_PROFILING
 
+#ifdef USE_MLT
+  #include "./mlt_van.h"
+#endif // USE_MLT
+
 namespace ps {
 
 // interval in second between to heartbeast signals. 0 means no heartbeat.
@@ -76,6 +80,12 @@ Van *Van::Create(const std::string &type) {
   } else if (type == "rdma") {
     return new RDMAVan();
 #endif
+
+#ifdef USE_MLT
+  } else if (type == "mlt") {
+    return new TestMLTApp();
+#endif
+
   } else {
     LOG(FATAL) << "unsupported van type: " << type;
     return nullptr;

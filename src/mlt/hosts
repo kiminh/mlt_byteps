@@ -1,0 +1,7 @@
+#rank,host:port
+#0,rdma0.gpu02.sing:5556
+#1,rdma0.gpu04.sing:5556
+0,rdma0.gpu02.sing:5556
+2,rdma0.gpu05.sing:5556
+5,rdma0.gpu03.sing:5558
+1,rdma0.gpu01.sing:5549
